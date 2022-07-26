@@ -19,8 +19,16 @@ namespace Sample_CV.Controllers
 
         public IActionResult Contact()
         {
-            return View(); 
+            Contact contact = new Contact(); 
+            return View(contact); 
         }
+
+        [HttpPost]
+        public JsonResult Contact(IFormCollection form)
+        {
+            return Json(Ok());
+        }
+
         public IActionResult Privacy()
         {
             return View();
