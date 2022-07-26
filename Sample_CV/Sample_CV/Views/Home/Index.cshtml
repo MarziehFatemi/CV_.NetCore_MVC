@@ -25,9 +25,17 @@
 				</div>
 			</div>
 		</section>
-	@*<partial name="Projects" /> *@
-	@await Html.PartialAsync("Projects")
 
+		@*begin partial 
+	<partial name="Projects" /> 
+	@await Html.PartialAsync("Projects")
+	@await Html.PartialAsync("Projects", new List<Project>())
+		end partial *@
+@*
+		load view component*@ 
+
+		@await Component.InvokeAsync("Projects")
+	@*	end load view component*@ 
 		<div class="container">
 			<hr>
 		</div>
