@@ -24,9 +24,17 @@ namespace Sample_CV.Controllers
         }
 
         [HttpPost]
-        public JsonResult Contact(IFormCollection form)
+        public IActionResult Contact(Contact contact)
         {
-            return Json(Ok());
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Error = "اطلاعات وارد شده صحیح نیست دوباره تلاش کنید. "; 
+            }
+            else
+            {
+                ViewBag.Success = "عملیات با موفقیت انجام شد";
+            }
+            return View(contact);
         }
 
         public IActionResult Privacy()
