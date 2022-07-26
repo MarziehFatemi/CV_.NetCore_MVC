@@ -2,7 +2,7 @@
 {
     public class IndexModel
     {
-        public List<Article> Articles { get; set; }
+        public List<OSCode> OSCodes { get; set; }
         public List<Project> Projects { get; set; }
     }
 }
