@@ -15,7 +15,7 @@ namespace Sample_CV.Models
         [EmailAddress(ErrorMessage ="ایمیل معتبر نیست")]
         public string Email { get; set; }
 
-        public int Service_Id { get; set; }
+        public int Service { get; set; }
 
         [Required(ErrorMessage = "این بند اجباری است")]
         [MaxLength(1000, ErrorMessage = "حداکثر 100 کاراکتر مجاز می باشد")]

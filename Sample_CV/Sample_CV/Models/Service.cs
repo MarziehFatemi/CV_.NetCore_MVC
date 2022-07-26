@@ -2,13 +2,13 @@
 {
     public class Service
     {
-        public int ServiceId { get; set; }
-        public string ServiceName { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
 
         public Service(int serviceId, string serviceName)
         {
-            ServiceId=serviceId;
-            ServiceName=serviceName;
+            Id=serviceId;
+            Name=serviceName;
         }
     }
 }

@@ -25,34 +25,38 @@ namespace Sample_CV.Controllers
             return View();
         }
 
+
+        [HttpGet]
         public IActionResult Contact()
         {
-            Contact model = new Contact()
+            var model = new Contact
             {
-                Services = new SelectList(_Services, "ServiceId", "ServiceName")
+                Services = new SelectList(_Services, "Id", "Name")
             };
-        
-        
-            return View(model); 
+            return View(model);
         }
 
         [HttpPost]
         public IActionResult Contact(Contact model)
         {
-            model.Services = new SelectList(_Services, "ServiceId", "ServiceName");
-
-
+            model.Services = new SelectList(_Services, "Id", "Name");
+            //if(ModelState.IsValid == false)
             if (!ModelState.IsValid)
             {
-                ViewBag.Error = "اطلاعات وارد شده صحیح نیست دوباره تلاش کنید. "; 
+                ViewBag.error = "اطلاعات وارد شده صحیح نیست. لطفا دوباره تلاش کنید";
+                return View(model);
             }
-            else
-            {
-                ViewBag.Success = "عملیات با موفقیت انجام شد";
-            }
-            return View(model);
-        }
 
+            ModelState.Clear();
+
+            model = new Contact
+            {
+                Services = new SelectList(_Services, "Id", "Name")
+            };
+            ViewBag.success = "پیغام شما با موفقیت ارسال شد. باتشکر";
+            return View(model);
+            //return RedirectToAction("Index");
+        }
         public IActionResult Privacy()
         {
             return View();
