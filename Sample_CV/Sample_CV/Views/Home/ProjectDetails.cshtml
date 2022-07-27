@@ -1,0 +1,22 @@
+﻿@model Sample_CV.Models.Project
+@{
+    ViewData["Title"] = "اطلعات بیشتر";
+}
+
+<div class="col-md-6 mb-5">
+						<div class="card project-card">
+							<div class="row no-gutters">
+								<div class="col-lg-4 card-img-holder">
+									<img src="~/assets/images/project/@Model.Image" class="card-img" alt=@Model.Name 
+									title=@Model.Name>
+								</div>
+								<div class="col-lg-8">
+									<div class="card-body">
+										<h5 class="card-title"> @Model.Name </h5>
+										<p class="card-text">@Model.Discription</p>
+										<p class="card-text"><small class="text-muted">مشتری: Client</small></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>

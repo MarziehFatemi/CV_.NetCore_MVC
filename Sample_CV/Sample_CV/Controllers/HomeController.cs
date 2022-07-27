@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Sample_CV.Models;
 using System.Diagnostics;
+using Sample_CV.StoredData; 
 
 namespace Sample_CV.Controllers
 {
@@ -23,6 +24,13 @@ namespace Sample_CV.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        public IActionResult ProjectDetails(long id)
+        {
+            Project project = ProjectsData.GetPorjectBy(id); 
+
+            return View(project); 
         }
 
 

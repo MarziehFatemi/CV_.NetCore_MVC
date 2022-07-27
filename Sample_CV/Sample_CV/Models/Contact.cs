@@ -11,7 +11,6 @@ namespace Sample_CV.Models
         public string Name { get; set; }
 
         [Required(ErrorMessage = "این بند اجباری است")]
-
         [EmailAddress(ErrorMessage ="ایمیل معتبر نیست")]
         public string Email { get; set; }
 
