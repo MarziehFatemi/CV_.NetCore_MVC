@@ -28,6 +28,7 @@ namespace Sample_CV.Controllers
 
         public IActionResult ProjectDetails(long id)
         {
+
             Project project = ProjectsData.GetPorjectBy(id); 
 
             return View(project); 
